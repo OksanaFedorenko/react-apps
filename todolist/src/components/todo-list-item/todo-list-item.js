@@ -2,44 +2,11 @@ import React, { Component } from 'react';
 import './todo-list-item.css'
 
 export default class TodoListItem extends Component {
-
-   state = {
-     done: false,
-     important: false
-   };
-   
-  /*constructor() {
-    super();
-    this.state = {
-      done: false
-    };
-  }*/
   
-  /*Это stage-3 proposal - функция-стрелка создается на самом объекте, а не на прототипе и this сохраняет свое лексическое значение. Можно применять и другой, более консервативный, способ, закомментированный ниже.*/
-
- onLabelClick = () => {
-   this.setState({
-     done: true
-   });
- };
-
- onMarkImportant = () => {
-    this.setState({
-      important: true
-    });
- };
-
-  /*constructor() {
-      super();
-      this.onLabelClick = () => {
-        console.log(`Done: ${this.props.label}`);
-      };
-   };*/
-
   render() {
 
-    const { label } = this.props;
-    const { done, important } = this.state;
+    const { label, onDeleted, onToggleImportant, onToggleDone, important, done } = this.props;
+  
 
     let classNames = 'todo-list-item';
     if (done) {
@@ -49,24 +16,21 @@ export default class TodoListItem extends Component {
       classNames += ' important';
     }
 
-
-
     return (
       <span className={classNames}>
         <span 
             className="todo-list-item-label" 
-            onClick={ this.onLabelClick }>
+            onClick={onToggleDone}>
           { label }
         </span>
         <button type="button"
               className="btn btn-outline-success btn-sm float-right"
-              onClick = {
-                this.onMarkImportant
-              } >
+              onClick = {onToggleImportant}>
           <i className="fa fa-exclamation" />
         </button>
         <button type="button"
-              className = "btn btn-outline-danger btn-sm float-right">
+              className = "btn btn-outline-danger btn-sm float-right"
+              onClick={onDeleted}>
           <i className="fa fa-trash-o" />
         </button>
       </span>
