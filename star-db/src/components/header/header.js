@@ -10,13 +10,14 @@ const Header = () => {
       </h3>
       <nav className="header-nav-menu col-6">
         <ul className="d-flex">
-          <li><a href="#">People</a></li>
-          <li><a href="#">Planets</a></li>
-          <li><a href="#">Starships</a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Secret</a></li>
+          <li><a href="">People</a></li>
+          <li><a href="">Planets</a></li>
+          <li><a href="">Starships</a></li>
+          <li><a href="">Login</a></li>
+          <li><a href="">Secret</a></li>
         </ul>
       </nav>
+      <button class="btn btn-primary btn-sm">Change Service></button>
     </div>
   )
 }
