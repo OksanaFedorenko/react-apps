@@ -1,10 +1,8 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.toggle-planet {
+  margin-bottom: 1rem;
 }
 
-ul li {
-  list-style: none;
+.stardb-app {
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
